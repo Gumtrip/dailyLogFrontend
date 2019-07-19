@@ -32,8 +32,8 @@
         data() {
             return {
                 loginForm: {
-                    mobile: '13809811545',
-                    password: '123456'
+                    mobile: '',
+                    password: ''
                 },
             }
         },
