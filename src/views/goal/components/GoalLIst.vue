@@ -28,7 +28,16 @@
                         <span><i class="el-icon-edit-outline"></i></span>
                     </router-link>
                 </el-col>
+
             </el-row>
+            <el-pagination layout="prev,pager,next"
+                           :total="total"
+                           :page-size="pageSize"
+                           :current-page.sync="page"
+                           @current-change="turnPage"
+            >
+
+            </el-pagination>
         </div>
     </div>
 </template>
@@ -39,7 +48,11 @@
         components: {},
         data() {
             return {
-                goalData:[]
+                goalData:[],
+                total: 0,
+                page: 1,
+                pageSize: 20,
+                loading:true,
             }
         },
         created() {
@@ -49,10 +62,15 @@
 
         },
         methods: {
-            async getGoals(){
+            async getGoals(page=1){
                 try {
-                    const response =await this.$api.getGoals();
-                    this.goalData = response.data.data
+                    const response =await this.$api.getGoals({
+                        page:page,
+                        page_size:this.pageSize
+                    });
+                    this.goalData = response.data.data;
+                    this.total = response.data.meta.pagination.total;
+
                 }catch (e) {
                     console.log(e);
                 }
@@ -64,6 +82,10 @@
                 }
                 return parseInt((mission_accomplish_amount/mission_amount )*100);
 
+            },
+            turnPage(page){
+                this.page = page;
+                this.getGoals(page);
             }
         }
     }
