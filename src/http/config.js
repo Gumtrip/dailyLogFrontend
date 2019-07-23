@@ -1,4 +1,4 @@
-const baseURL = process.env.NODE_ENV == 'production'?'http://top-booking.natapp1.cc/api/':'http://top-top.com/api/';
+const baseURL = process.env.NODE_ENV == 'production'?'/api/':'http://top-top.com/api/';
 export default {
     method: 'post',
     // 基础url前缀

@@ -31,7 +31,6 @@
 <script>
     import {mapState} from 'vuex';
     import config from '@/config/config.js'
-    import ls from '@/utils/localStorage';
     export default {
         name: "Edit",
         data() {

@@ -34,17 +34,17 @@
                            :total="total"
                            :page-size="pageSize"
                            :current-page.sync="page"
-                           @current-change="turnPage"
-            >
+                           @current-change="turnPage"></el-pagination>
 
-            </el-pagination>
+
+
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "GoalLIst",
+        name: "GoalList",
         components: {},
         data() {
             return {

@@ -68,6 +68,21 @@ const routes = [
         name: 'login.code',
         component: loadView('/auth', 'LoginViaCode')
     },
+    {
+        path: '/goalCategories/create',
+        name: 'goalCategories.create',
+        component: loadView('/goalCategory', 'CreateAndEdit')
+    },
+    {
+        path: '/goalCategories/:goalCategoryId/edit',
+        name: 'goalCategories.edit',
+        component: loadView('/goalCategory', 'CreateAndEdit')
+    },
+    {
+        path: '/goalCategories',
+        name: 'goalCategories.index',
+        component: loadView('/goalCategory', 'Index')
+    },
 
 ];
 const router = new Router({

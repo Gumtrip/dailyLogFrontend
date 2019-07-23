@@ -157,8 +157,36 @@ const getGoalLogs = async(params)=>{
         params:params
     });
 };
+const getGoalCategories = async(params)=>{
+    return axios({
+        url: 'goalCategories',
+        method: 'get',
+        params:params
+    });
+};
+const getGoalCategory = async(id,params)=>{
+    return axios({
+        url: 'goalCategories/'+id,
+        method: 'get',
+        params:params
 
+    });
+};
+const createGoalCategory = async(data)=>{
+    return axios({
+        url: 'goalCategories',
+        method: 'post',
+        data:data
+    });
+};
 
+const editGoalCategory = async(id,data)=>{
+    return axios({
+        url: 'goalCategories/'+id,
+        method: 'patch',
+        data: data,
+    });
+};
 // 默认全部导出
 // 根据需要进行
 export default {
@@ -177,4 +205,10 @@ export default {
     getGoal,
     editGoal,
     getGoalLogs,
+
+    getGoalCategory,
+    getGoalCategories,
+    createGoalCategory,
+    editGoalCategory,
+
 };
