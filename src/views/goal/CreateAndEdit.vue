@@ -14,7 +14,7 @@
                     <el-input v-model="form.title"></el-input>
                 </el-form-item>
                 <el-form-item label="备注:" >
-                    <el-input v-model="form.remark"></el-input>
+                    <el-input type="textarea"  v-model="form.remark"></el-input>
                 </el-form-item>
                 <el-form-item label="奖金:" >
                     <el-input v-model="form.bonus"></el-input>
@@ -57,7 +57,7 @@
                     title:'',
                     remark:'',
                     bonus:3,
-                    missionAmount:'',
+                    missionAmount:1,
                     dateRange:[],
                 },
                 dateFormat:'YYYY-MM-DD hh:mm:ss',
