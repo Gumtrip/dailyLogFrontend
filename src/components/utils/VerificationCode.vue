@@ -32,7 +32,7 @@
         components: {},
         data() {
             return {
-                mobile: '13809811545',
+                mobile: '',
                 captchaCode: '',//图片验证码
                 captchaTpl: '',//图片验证码图片路径
                 captchaKey: '',//图片验证码key,
