@@ -84,6 +84,7 @@
             async submitForm(){
                 try {
                     let  response,data,message;
+ 
                     data={
                         title:this.form.title,
                         remark:this.form.remark,
@@ -92,8 +93,9 @@
                         start_at:moment(this.form.dateRange[0]).format(this.dateFormat),
                         end_at:moment(this.form.dateRange[1]).format(this.dateFormat),
                     };
-                    if(Object.keys(this.goal.length)>0){
+                    if(Object.keys(this.goal).length>0){
                         response = await this.$api.editGoal(this.goal.id,data);
+
                         message='修改成功';
                     }else{
                         response =await this.$api.createGoal(data);
