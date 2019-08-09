@@ -123,11 +123,14 @@
                     amount: this.form.amount,
                     remark: this.form.remark
                 });
+                this.goal = response.data;
+                this.canGetRewards = this.goal.can_get_the_awards;
                 if (response.status === 200) {
                     this.$message({
                         message: '修改成功',
                         type: 'success'
                     });
+
                     this.getGoalLogs(this.goalId)
 
                 }
