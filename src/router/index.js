@@ -16,6 +16,12 @@ const routes = [
         component: loadView('', 'Home')
     },
     {
+        path: '/seckill',
+        name: 'home',
+        component: loadView('/seckill', 'Index')
+    },
+
+    {
         path: '/user/',
         component: loadView('/user', 'Layout'),
         children: [
