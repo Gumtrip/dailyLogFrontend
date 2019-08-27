@@ -8,6 +8,7 @@
                 <el-col :span="12">
                     <h3 class="title">[可乐相伴 开怀畅饮]可口可乐500ml/瓶</h3>
                     <p class="desc">缤纷时刻齐分享！可口可乐以其独特的风味和上佳的口感深受大众尤其是年轻人的青睐，与 美食是绝配哦！</p>
+                    <div class="saleAmount"><img src="/static/fire.png" alt=""><strong>1586</strong> 瓶已抢</div>
                     <div class="bottomBox">
                         <div class="price">
                             <span class="currency">￥</span>
@@ -37,10 +38,14 @@
 </script>
 
 <style lang="scss" scoped>
+    $red:#ff4646;
     .title{font-size: 18px; border-bottom:1px dashed #dedede; line-height:60px; }
-    .desc{font-size: 14px;color: #a9a9a9;margin-bottom: 150px}
+    .desc{font-size: 14px;color: #a9a9a9;margin-bottom: 20px}
     .bottomBox{display: flex;justify-content: space-between}
-    .price{color: #ff4646;
+    .saleAmount{color: #726f6f;margin-bottom: 100px;font-size: 14px;
+        strong{color: $red;padding:0 10px}
+    }
+    .price{color: $red;
         .currency{font-size: 24px}
         .value{font-size: 48px}
     }
