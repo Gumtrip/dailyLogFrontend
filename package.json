@@ -8,7 +8,9 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "upload": "node build/upload.js"
+    "build:test": "node build/test.js",
+    "upload": "node build/upload.js",
+    "upload:test": "node build/upload.test.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
