@@ -187,6 +187,28 @@ const editGoalCategory = async(id,data)=>{
         data: data,
     });
 };
+const getSeckillProduct = async(id,data)=>{
+    return axios({
+        url: 'seckill/seckillProduct/'+id,
+        method: 'get',
+        data: data,
+    });
+};
+const editSeckillProduct = async(id,data)=>{
+    return axios({
+        url: 'seckill/seckillProduct/'+id,
+        method: 'patch',
+        data: data,
+    });
+};
+const placeSeckillOrder = async(data)=>{
+    return axios({
+        url: 'seckill/placeOrder/',
+        method: 'post',
+        data: data,
+    });
+};
+
 // 默认全部导出
 // 根据需要进行
 export default {
@@ -211,4 +233,7 @@ export default {
     createGoalCategory,
     editGoalCategory,
 
+    placeSeckillOrder,
+    getSeckillProduct,
+    editSeckillProduct
 };
