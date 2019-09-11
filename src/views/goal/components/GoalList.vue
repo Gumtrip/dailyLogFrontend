@@ -68,7 +68,7 @@
                         page:page,
                         page_size:this.pageSize
                     });
-                    this.goalData = response.data.data.reverse();
+                    this.goalData = response.data.data;
                     this.total = response.data.meta.pagination.total;
 
                 }catch (e) {
