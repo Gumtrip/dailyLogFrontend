@@ -159,14 +159,14 @@ const getGoalLogs = async(params)=>{
 };
 const getGoalCategories = async(params)=>{
     return axios({
-        url: 'goalCategories',
+        url: 'goal-categories',
         method: 'get',
         params:params
     });
 };
 const getGoalCategory = async(id,params)=>{
     return axios({
-        url: 'goalCategories/'+id,
+        url: 'goal-categories/'+id,
         method: 'get',
         params:params
 
@@ -174,7 +174,7 @@ const getGoalCategory = async(id,params)=>{
 };
 const createGoalCategory = async(data)=>{
     return axios({
-        url: 'goalCategories',
+        url: 'goal-categories',
         method: 'post',
         data:data
     });
@@ -182,11 +182,19 @@ const createGoalCategory = async(data)=>{
 
 const editGoalCategory = async(id,data)=>{
     return axios({
-        url: 'goalCategories/'+id,
+        url: 'goal-categories/'+id,
         method: 'patch',
         data: data,
     });
 };
+const deleteGoalCategory = async(id)=>{
+    return axios({
+        url: 'goal-categories/'+id,
+        method: 'delete',
+    });
+};
+
+
 const getSeckillProduct = async(id,data)=>{
     return axios({
         url: 'seckill/seckillProduct/'+id,
@@ -232,6 +240,7 @@ export default {
     getGoalCategories,
     createGoalCategory,
     editGoalCategory,
+    deleteGoalCategory,
 
     placeSeckillOrder,
     getSeckillProduct,

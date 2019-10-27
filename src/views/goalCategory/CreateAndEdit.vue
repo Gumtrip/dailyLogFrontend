@@ -52,8 +52,7 @@
                     data={
                         title:this.form.title,
                     };
-
-                    if(Object.keys(this.goalCategory)){
+                    if(Object.keys(this.goalCategory).length>0){
                         response = await this.$api.editGoalCategory(this.goalCategory.id,data);
                         message='修改成功';
                     }else{

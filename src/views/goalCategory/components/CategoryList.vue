@@ -1,6 +1,14 @@
 <template>
     <div class="container">
-        <div v-if="goalCategoryData">
+        <div>
+            <router-link :to="{name:'home'}">
+                <el-button type="primary">返回</el-button>
+            </router-link>
+        </div>
+        <el-card v-if="goalCategoryData">
+            <div slot="header">
+                <p>目标分类</p>
+            </div>
             <el-row v-for="(category,key) in goalCategoryData" class="list" :key="key">
                 <el-col :span="20">
                     <span class="title" v-text="category.title"></span>
@@ -9,6 +17,7 @@
                     <router-link :to="{name:'goalCategories.edit',params:{goalCategoryId:category.id}}">
                         <span><i class="el-icon-edit-outline"></i></span>
                     </router-link>
+                    <span class="hover"><i class="el-icon-delete" @click="deleteItem(category.id)"></i></span>
                 </el-col>
 
             </el-row>
@@ -18,9 +27,7 @@
                            :current-page.sync="page"
                            @current-change="turnPage"></el-pagination>
 
-
-
-        </div>
+        </el-card>
 
     </div>
 </template>
@@ -57,6 +64,19 @@
                 }catch (e) {
                     console.log(e);
                 }
+            },
+            deleteItem(id){
+                this.$confirm('确认删除？').then(()=>{
+                    this.$api.deleteGoalCategory(id).then(()=>{
+                        this.$message({
+                            message: '删除成功！',
+                            type: 'success'
+                        });
+                    })
+                })
+                    .catch(()=>{
+                        console.log(2);
+                    })
             },
             turnPage(page){
                 this.page = page;
