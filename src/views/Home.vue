@@ -12,7 +12,7 @@
                 <el-button type="primary">分类列表</el-button>
             </router-link>
         </div>
-        <div style="height: 10px"></div>
+        <div class="blank"></div>
         <el-card>
             <el-row>
                 <el-col :span="8">奖励</el-col>
@@ -50,5 +50,5 @@
 </script>
 
 <style lang="scss" scoped>
-
+    .blank{height: 10px}
 </style>
